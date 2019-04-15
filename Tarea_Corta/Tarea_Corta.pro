@@ -30,14 +30,18 @@ SOURCES += \
     proceso.cpp \
     linea.cpp \
     pagina.cpp \
-    vehiculo.cpp
+    vehiculo.cpp \
+    cola.cpp \
+    nodo.cpp
 
 HEADERS += \
         mainwindow.h \
     proceso.h \
     linea.h \
     pagina.h \
-    vehiculo.h
+    vehiculo.h \
+    cola.h \
+    nodo.h
 
 FORMS += \
         mainwindow.ui
