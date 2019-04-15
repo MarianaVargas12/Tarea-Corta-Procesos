@@ -1,0 +1,16 @@
+#ifndef VEHICULO_H
+#define VEHICULO_H
+
+
+class Vehiculo
+{
+private:
+    char procesoActual;
+    int tiempo;
+    int linea;
+    
+public:
+    Vehiculo();
+};
+
+#endif // VEHICULO_H

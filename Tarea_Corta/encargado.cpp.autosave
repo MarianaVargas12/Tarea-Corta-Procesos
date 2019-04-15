@@ -1,0 +1,7 @@
+#include "encargado.h"
+
+Encargado::Encargado(char proceso)
+{
+    this->proceso=proceso;
+}
+

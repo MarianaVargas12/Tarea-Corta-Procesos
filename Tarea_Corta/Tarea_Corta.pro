@@ -32,7 +32,9 @@ SOURCES += \
     pagina.cpp \
     vehiculo.cpp \
     cola.cpp \
-    nodo.cpp
+    nodo.cpp \
+    encargado.cpp \
+    lista.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,7 +43,9 @@ HEADERS += \
     pagina.h \
     vehiculo.h \
     cola.h \
-    nodo.h
+    nodo.h \
+    encargado.h \
+    lista.h
 
 FORMS += \
         mainwindow.ui

@@ -1,0 +1,15 @@
+#ifndef ENCARGADO_H
+#define ENCARGADO_H
+#include "cola.h"
+
+class Encargado
+{
+private:
+    char proceso;
+    cola* colaProceso= new cola();
+    lista 
+public:
+    Encargado(char proceso);
+};
+
+#endif // ENCARGADO_H
