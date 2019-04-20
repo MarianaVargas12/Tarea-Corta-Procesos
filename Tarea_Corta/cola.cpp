@@ -45,10 +45,9 @@ void cola::recorrer(){
     if(Inicial==nullptr && Ultimo==nullptr){
         std::cout<<"Queue is empty"<<endl;
     }while(temp!=nullptr){
-        std::cout<<temp->getVehiculo()<<endl;
+        std::cout<<temp<<endl;
         temp= temp->getSiguiente();
     }
-    std::cout<<<<endl;
 }
 int cola::getCantidad(){
     return this->cantidad;

@@ -17,3 +17,9 @@ Vehiculo Nodo::getVehiculo(){
 void Nodo::setVehiculo(Vehiculo carro){
     this->vehiculo= carro;
 }
+Proceso Nodo::getProceso(){
+    return this->proceso;
+}
+void Nodo::setProceso(Proceso proceso){
+    this->proceso=proceso;
+}

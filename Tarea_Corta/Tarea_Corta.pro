@@ -34,7 +34,8 @@ SOURCES += \
     cola.cpp \
     nodo.cpp \
     encargado.cpp \
-    lista.cpp
+    lista.cpp \
+    empresa.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -45,7 +46,8 @@ HEADERS += \
     cola.h \
     nodo.h \
     encargado.h \
-    lista.h
+    lista.h \
+    empresa.h
 
 FORMS += \
         mainwindow.ui

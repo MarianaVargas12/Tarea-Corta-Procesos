@@ -3,7 +3,7 @@
 #include "nodo.h"
 #include "vehiculo.h"
 #include <iostream>
-
+using namespace std;
 
 class cola
 {

@@ -22,7 +22,9 @@ public:
     Linea(int linea,Encargado* A, Encargado* B,Encargado* C, Encargado* D, Encargado* E, Encargado* F);
     void asignarProcesos();
     char proceso(int Num);
-    void produccion(Vehiculo carro);
+    void ingresar(Vehiculo carro);
+    void produccion();
+    char buscarSiguiente(char letra);
 };
 
 #endif // LINEA_H
