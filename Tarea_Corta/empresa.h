@@ -5,16 +5,20 @@
 #include "lista.h"
 #include "nodo.h"
 #include "encargado.h"
+#include "cola.h"
 
 class Empresa
 {
 private:
-    Encargado* encargadoA =new Encargado();
-    Encargado* encargadoB =new Encargado();
-    Encargado* encargadoC =new Encargado();
-    Encargado* encargadoD =new Encargado();
-    Encargado* encargadoE =new Encargado();
-    Encargado* encargadoF =new Encargado();
+    Encargado* encargadoA =new Encargado(colaGeneral,tiempo);
+    Encargado* encargadoB =new Encargado(colaGeneral,tiempo);
+    Encargado* encargadoC =new Encargado(colaGeneral,tiempo);
+    Encargado* encargadoD =new Encargado(colaGeneral,tiempo);
+    Encargado* encargadoE =new Encargado(colaGeneral,tiempo);
+    Encargado* encargadoF =new Encargado(colaGeneral,tiempo);
+    cola* colaGeneral=new cola();
+    int tiempo1=0;
+    int* tiempo=&tiempo1;
     Linea* linea1= new Linea(1, encargadoA,encargadoB,encargadoC,encargadoD,encargadoE,encargadoF);
     Linea* linea2= new Linea(2, encargadoA,encargadoB,encargadoC,encargadoD,encargadoE,encargadoF);
     Linea* linea3= new Linea(3, encargadoA,encargadoB,encargadoC,encargadoD,encargadoE,encargadoF);
@@ -25,6 +29,7 @@ private:
 public:
     Empresa();
     void Produccion(Vehiculo carro,int linea);
+    void print();
 };
 
 #endif // EMPRESA_H

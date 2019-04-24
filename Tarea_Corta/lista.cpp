@@ -11,17 +11,20 @@ void Lista::insertarFinal(Nodo* nuevoNodo){
             actual=actual->getSiguiente();
         }
         actual->setSiguiente(nuevoNodo);
+        this->cantidad+=1;
     }
 
     else{
         Head = nuevoNodo;
         Head->setSiguiente(nullptr);
+        this->cantidad+=1;
     }
 }
 
 void Lista::insertarInicio(Nodo* nuevoNodo){
     nuevoNodo->setSiguiente(Head);
     Head = nuevoNodo;
+    this->cantidad+=1;
 }
 
 void Lista::display(){
@@ -51,16 +54,19 @@ void Lista::eliminar(Nodo* actual){
             if(temp==actual && temp->getSiguiente()==nullptr){
                 anterior->setSiguiente(nullptr);
                 delete(temp);
+                this->cantidad+=1;
                 break;
             }
             else if(temp==actual && temp==anterior){
                 this->Head=temp->getSiguiente();
                 delete(temp);
+                this->cantidad+=1;
                 break;
             }
             else if (temp== actual) {
                 anterior->setSiguiente(temp->getSiguiente());
                 delete(temp);
+                this->cantidad+=1;
                 break;
             }
             else {
@@ -68,4 +74,7 @@ void Lista::eliminar(Nodo* actual){
             }
         }
     }
+}
+int Lista::getCantidad(){
+    return this->cantidad;
 }

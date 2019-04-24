@@ -5,6 +5,7 @@ class Vehiculo
 {
 private:
     char procesoActual;
+    char procesoSiguiente;
     int tiempo;
     int linea;
 
@@ -16,6 +17,8 @@ public:
     int getLinea();
     void setProcesoActual(char Proceso);
     char getProcesoActual();
+    void setProcesoSiguiente(char Proceso);
+    char getProcesoSiguiente();
 };
 
 #endif // VEHICULO_H

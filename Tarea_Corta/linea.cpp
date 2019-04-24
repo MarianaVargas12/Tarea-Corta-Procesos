@@ -66,3 +66,86 @@ char Linea::proceso(int Num){
     }else{
     }
 }
+void Linea::ingresar(Vehiculo carro){
+    Nodo* nuevoNodo= new Nodo();
+    nuevoNodo->setVehiculo(carro);
+    if(Vehiculos->getCantidad()>=6){
+        vehiculosEspera->agregar(nuevoNodo);
+    }
+    else {
+        Vehiculos->insertarFinal(nuevoNodo);
+        produccion();
+    }
+}
+void Linea::produccion(){
+    Nodo* temp=Vehiculos->getHead();
+    if(temp==nullptr){
+
+    }else {
+        while(temp!=nullptr){
+            if(temp->getVehiculo().getTiempo()!=0){
+
+            }else{
+                if(temp->getVehiculo().getProcesoSiguiente()=='A'){
+                    Vehiculos->eliminar(temp);
+                    Vehiculo nuevoCarro= vehiculosEspera->solicitar();
+                    //if(nuevoCarro==NULL){
+                        // no hay
+                    //}
+                    //else {
+                        Nodo* nuevoNodo= new Nodo();
+                        nuevoNodo->setVehiculo(nuevoCarro);
+                        Vehiculos->insertarFinal(nuevoNodo);
+                    //}
+                }
+                else if(temp->getVehiculo().getProcesoSiguiente()=='A'){
+                    temp->getVehiculo().setProcesoActual('A');
+                    temp->getVehiculo().setProcesoSiguiente(buscarSiguiente('A'));
+                    temp->getVehiculo().setTiempo(10*linea);
+                    A->Nuevo(temp->getVehiculo());
+                    temp=temp->getSiguiente();
+                }else if (temp->getVehiculo().getProcesoSiguiente()=='B') {
+                    temp->getVehiculo().setProcesoActual('B');
+                    temp->getVehiculo().setProcesoSiguiente(buscarSiguiente('B'));
+                    temp->getVehiculo().setTiempo(5*linea);
+                    B->Nuevo(temp->getVehiculo());
+                    temp=temp->getSiguiente();
+                }else if (temp->getVehiculo().getProcesoSiguiente()=='C') {
+                    temp->getVehiculo().setProcesoActual('C');
+                    temp->getVehiculo().setProcesoSiguiente(buscarSiguiente('C'));
+                    temp->getVehiculo().setTiempo(12*linea);
+                    C->Nuevo(temp->getVehiculo());
+                    temp=temp->getSiguiente();
+                }else if (temp->getVehiculo().getProcesoSiguiente()=='D') {
+                    temp->getVehiculo().setProcesoActual('D');
+                    temp->getVehiculo().setProcesoSiguiente(buscarSiguiente('D'));
+                    temp->getVehiculo().setTiempo(16*linea);
+                    D->Nuevo(temp->getVehiculo());
+                    temp=temp->getSiguiente();
+                }else if (temp->getVehiculo().getProcesoSiguiente()=='E') {
+                    temp->getVehiculo().setProcesoActual('E');
+                    temp->getVehiculo().setProcesoSiguiente(buscarSiguiente('E'));
+                    temp->getVehiculo().setTiempo(8*linea);
+                    E->Nuevo(temp->getVehiculo());
+                    temp=temp->getSiguiente();
+                }else if (temp->getVehiculo().getProcesoSiguiente()=='F') {
+                    temp->getVehiculo().setProcesoActual('F');
+                    temp->getVehiculo().setProcesoSiguiente(buscarSiguiente('F'));
+                    temp->getVehiculo().setTiempo(3*linea);
+                    F->Nuevo(temp->getVehiculo());
+                    temp=temp->getSiguiente();
+                }
+            }
+        }
+    }
+}
+char Linea::buscarSiguiente(char letra){
+    for (int i=0;i<7;i++) {
+        if(i==6){
+            return 'G';
+        }
+        else if(letra==procesos[i]){
+            return procesos[i+1];
+        }
+    }
+}

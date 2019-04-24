@@ -8,6 +8,7 @@ class Lista
 {
 private:
     Nodo* Head = nullptr;
+    int cantidad=0;
 
 public:
     Lista();
@@ -16,6 +17,7 @@ public:
     void display();
     Nodo* getHead();
     void eliminar(Nodo* actual);
+    int getCantidad();
 
 };
 

@@ -22,3 +22,9 @@ void Vehiculo::setProcesoActual(char proceso){
 char Vehiculo::getProcesoActual(){
     return this->procesoActual;
 }
+void Vehiculo::setProcesoSiguiente(char Proceso){
+    this->procesoSiguiente=Proceso;
+}
+char Vehiculo::getProcesoSiguiente(){
+    return this->procesoSiguiente;
+}

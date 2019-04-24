@@ -12,6 +12,7 @@ private:
     
 public:
     Proceso();
+    void accion(Vehiculo carro);
 };
 
 #endif // PROCESO_H

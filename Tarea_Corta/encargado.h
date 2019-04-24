@@ -12,14 +12,17 @@ private:
     cola* colaProceso= new cola();
     Lista* vehiculosProcesos= new Lista();
     int carroProceso=0;
+    int* tiempo;
+    cola* colaGeneral;
 
 
 public:
-    Encargado();
+    Encargado(cola* colaGeneral,int* tiempo);
     bool Nuevo(Vehiculo carro);
     void Cola();
     void sacarCola();
     bool maximo3();
+    void funcion();
     void setProceso(char proceso);
     char getProceso();
 };
